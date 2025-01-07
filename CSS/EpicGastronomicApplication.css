@@ -1,0 +1,10 @@
+.wrapper-epic-gastronomic-application {
+  background-image: url('/src/COMPONENTS/Home_Work_React/home_work_37/IMG/foto-restaurant.jpeg');  
+  background-size: cover; /* Изображение полностью покрывает область */
+  background-position: center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Избегает повторения изображения */
+  height: fit-content; /* Высота компонента или страницы */
+  width: 100vw;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}

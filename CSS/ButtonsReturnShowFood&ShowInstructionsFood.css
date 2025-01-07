@@ -1,0 +1,18 @@
+.button-return-random-food,
+.button-show-instrucion-random-food {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+    background-image: linear-gradient(to left, #20002c 0%, #cbb4d4  51%, #20002c  100%);
+    padding: 10px 15px;
+    transition: 0.3s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+.button-return-random-food:hover, 
+.button-show-instrucion-random-food:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

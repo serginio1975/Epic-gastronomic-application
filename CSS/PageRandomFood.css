@@ -1,0 +1,278 @@
+.button-show-random-food {
+    width: 70%;
+    height: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    padding: 5px 0px 5px 0px;
+    color: whitesmoke;
+    /* background-color: black; */
+    /* opacity: 0.5; */
+    border-radius: 10px;
+    margin: 10px 0px 20px 0px;
+    /*  */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    border: none;
+    /*  */
+    transition: background-color 0.7s ease, opacity 0.7s ease;
+}
+
+.button-show-random-food:hover {
+    background-color: black;
+    opacity: 1;
+}
+
+/* Плавный переход для текста внутри кнопки */
+.title-button-show {
+    font-size: 32px;
+    color: whitesmoke;
+    transition: font-size 0.7s ease, color 0.7s ease;
+}
+/* Изменение текста при наведении */
+.button-show-random-food:hover .title-button-show {
+    font-size: 38px;
+    color: gold;
+}
+
+.wrapper-random-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 550px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+  /* width: 100%; */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    color: orange; /* Контрастный цвет текста */
+    box-shadow: 0px -0px 20px 10px lightgrey;
+}
+
+.foto-card-random-food {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.wrapper-title-name-random-fod {
+    margin: 20px 0px 20px 0px;
+}
+.title-name-random-food {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline;
+    font-size: 28px;
+    font-weight: 900;
+    margin-right: 20px;
+}
+.name-random-food {
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:32px;
+    color: yellow;
+    font-weight: 700;
+}
+.wrapper-title-origin-random-food {
+    margin: 10px 0px 20px 0px;
+}
+
+.title-origin-random-food {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline;
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+.title-name-country {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: yellow;
+    padding: 0px;
+}
+
+/* !!!!!!!!!!!!!!! */
+.button-show-ingredients-measure { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 40px;
+    border: none;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    transition: background-color 1s ease, opacity 1s ease;
+}
+.button-show-ingredients-measure:hover {
+    background-color: orange;
+    background-size: cover;
+    background-position: center;
+}
+.content-button-show-ingredients-measure {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: orangered;
+    transition: font-size 1s ease;  
+}
+
+.button-show-ingredients-measure:hover .content-button-show-ingredients-measure {
+    font-size: 28px;
+}
+
+.button-in-favorites {
+    width: 70px;
+    padding: 0px;
+    margin-top: 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0));
+    border: none;
+
+}
+
+.wrapper-favorites-choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    /* margin: 10px 0px 10px 0px */
+}
+.icon-in-favorites,
+.icon-add-in-favorites {
+    width: 40px;
+    font-size: 45px;
+    color: greenyellow;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  */
+.wrapper-list-ingredients-measure {
+    /* position: relative; */
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    color: orange; /* Контрастный цвет текста */
+    box-shadow: 0px -0px 20px 10px lightgrey;
+        
+}
+/* .wrapper-ingredients-measures { */
+    /* display: flex;
+    justify-content: center; */
+    /* gap: 100px; */
+    /* margin-bottom: 200px;   */
+/* } */
+.wrapper-titles-ingredients-measures {
+    display: flex;
+    justify-content: center;
+    gap: 38%;
+    margin-bottom: 20px;
+    
+}
+.title-list-ingredients-measures {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px 0px 20px 0px;
+    width: fit-content;
+    margin: auto;
+    font-size: 72px;
+    font-weight: 900;
+    color: yellow;
+    text-shadow: 5px -5px 5px orange
+}
+.wrapper-list-ingredients-measures-food {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px
+}
+.wrapper-item-ingredient-measure {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 11% 0px 11%;
+    padding: 5px;
+    border-radius: 10px;
+    
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(83, 52, 109, 0.5) 51%, rgba(0, 0, 0, 0.5) 100%);
+    /* text-align: center; */
+    transition: background-position 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    /* display: block;          */
+}
+.wrapper-item-ingredient-measure:hover {
+          
+    background-image: linear-gradient(to right, #000000 , #53346D  51%, #000000  100%);
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    box-shadow: 0 0 30px #fff;
+    text-decoration: none;
+          
+}
+.title-ingredients-food,
+.title-measures-food  {
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 36px;
+     font-weight: 700;
+     color: gold;
+     text-decoration: underline solid 3px red;
+}
+.title-list-ingredients-food,
+.title-list-measures-food {
+    margin-bottom: 20px;
+}
+.content-ingredient-food {
+    margin-left: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: orange;
+}
+.content-measure-food {
+    margin-right: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: orange;
+}
+
+.wrapper-separator-content {
+    margin-top: 55px;
+}
+.separator-content-ingredient-measure {
+    font-size: 32px;
+    color: orangered;
+}
+
+/* Buttons !!!    Buttons !!!  Buttons !!!  Buttons !!!  Buttons !!!  Buttons !!!  Buttons !!!*/
+.wrapper-buttons-show-random-food-show-instruction {
+    display: flex;
+    justify-content: center;
+    gap: 13.5%;
+      padding: 30px 0px 30px 0px;
+}
+/* .button-return-random-food,
+.button-show-instrucion-random-food {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+    background-image: linear-gradient(to left, #20002c 0%, #cbb4d4  51%, #20002c  100%);
+    padding: 10px 15px;
+    transition: 0.3s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+.button-return-random-food:hover, 
+.button-show-instrucion-random-food:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+} */
+
+/*  */
+
+       
