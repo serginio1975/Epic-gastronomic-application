@@ -48,6 +48,8 @@ const PageSearchFoods = ({
   //
   useEffect(() => {
     console.log(33333);
+    // setFlagAddToFavorites(false); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     setFlagShowPageSearch(true);
     // setFlagChoiceArrayRandomFavorite(true);
   }, []);

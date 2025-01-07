@@ -16,9 +16,11 @@ const CardFoodTwoSides = ({
   setFlagShowInstructionRandomFood,
   setFlagChoiceButton,
   //
-
   flagShowPageSearch,
+  setFlagAddToFavorites,
 }) => {
+  console.log(setFlagAddToFavorites, flagShowPageSearch);
+
   return (
     <>
       {!flagShowPageSearch
@@ -41,6 +43,7 @@ const CardFoodTwoSides = ({
                   arrayFavoriteFoods={arrayFavoriteFoods}
                   setArrayFavoriteFoods={setArrayFavoriteFoods}
                   setFlagShowRandomFood={setFlagShowRandomFood}
+                  setFlagAddToFavorites={setFlagAddToFavorites}
                 />
               </div>
             </div>
@@ -64,6 +67,7 @@ const CardFoodTwoSides = ({
                   arrayFavoriteFoods={arrayFavoriteFoods}
                   setArrayFavoriteFoods={setArrayFavoriteFoods}
                   setFlagShowRandomFood={setFlagShowRandomFood}
+                  setFlagAddToFavorites={setFlagAddToFavorites}
                 />
               </div>
             </div>

@@ -15,9 +15,9 @@ const CardBackSide = ({
   //
   arrayFavoriteFoods,
   setArrayFavoriteFoods,
+  //
+  setFlagAddToFavorites,
 }) => {
-  // console.log(setArrayRandomFood);s
-
   return (
     <>
       <div className='wrapper-favorite-card wrapper-favorite-card-back  wrapper-card-back'>
@@ -77,8 +77,14 @@ const CardBackSide = ({
           {/* Button add to add favorites: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
           <button
             onClick={() => {
-              console.log('!!!!!!!!!!!!!!!!!!!!');
-              // setFlagAddToFavorites(false);
+              if (!arrayFavoriteFoods.includes(object)) {
+                console.log('!!!!!!!!!!!!!!!!!!!!', setFlagAddToFavorites);
+                setFlagAddToFavorites(false);
+                setArrayFavoriteFoods([...arrayFavoriteFoods, object]);
+                setFlagAddToFavorites(true); // Появляется галочка !!!
+                object = { ...object, isTrue: true };
+                console.log(object);
+              }
             }}
             className='button-in-favorites'
           >
@@ -89,7 +95,8 @@ const CardBackSide = ({
               alt='icon in favorites.'
             />
           </button>
-          {flagAddToFavorites && (
+          {object.hasOwnProperty('isTrue') ? (
+            //  {setArrayFavoriteFoods(arrayFavoriteFoods) }
             <span
               onClick={() => {
                 console.log(object);
@@ -104,6 +111,8 @@ const CardBackSide = ({
             >
               ✓
             </span>
+          ) : (
+            <span></span>
           )}
         </div>
       </div>
