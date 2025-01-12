@@ -44,7 +44,7 @@
 
 // API: https://www.themealdb.com/api/json/v1/1/random.php и search.php?s=
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // import NavigationApplication from './NavigationApplication';
@@ -61,43 +61,41 @@ import fotoRestaurant from './IMG/foto-restaurant.jpeg';
 import FooterApplication from './FooterApplication';
 
 const EpicGastronomicApplication = () => {
+  // console.log('Render global !!!');
+  // URLS:
   const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s';
   const urlRandom = 'https://www.themealdb.com/api/json/v1/1/random.php';
-  //
+
+  // ARRAYS:
   const [arrayRandomFood, setArrayRandomFood] = useState([]);
   const [arrayAllFoods, setArrayAllFoods] = useState([]);
-  // const [objectRandomFood, setObjectRandomFood] = useState(null);
-  const [flagRandomFood, setFlagRandomFood] = useState([]); // Boolean true не работает !!!!!!!!!!!!
-  const [flagShowRandomFood, setFlagShowRandomFood] = useState(true);
-  const [flagShowInstructionRandomFood, setFlagShowInstructionRandomFood] =
-    useState(false);
-  const [flagAddToFavorites, setFlagAddToFavorites] = useState(false);
-  //
+  const [arrayFavoriteFoods, setArrayFavoriteFoods] = useState([]);
   const [
     arrayIngredientsAndMeasureRandomFood,
     setArrayIngredientsAndMeasureRandomFood,
   ] = useState([]);
-  //
-  const [arrayFavoriteFoods, setArrayFavoriteFoods] = useState([]);
-  //
+
+  // FLAGS:
+  const [flagRandomFood, setFlagRandomFood] = useState(false);
+  const [flagShowRandomFood, setFlagShowRandomFood] = useState(true);
+  const [flagShowInstructionRandomFood, setFlagShowInstructionRandomFood] =
+    useState(false);
+  const [flagAddToFavorites, setFlagAddToFavorites] = useState(false);
   const [flagChoiceArrayRandomFavorite, setFlagChoiceArrayRandomFavorite] =
-    useState(false); // ##################################??????????????????????????##############
-  //
+    useState(false); // ##################################??????????????????????????????????????????
   const [flagChoiceButton, setFlagChoiceButton] = useState(true);
+  const [flagShowIconAddToFavorites, setFlagShowIconAddToFavorites] =
+    useState(false);
 
-  console.log('arrayFavoriteFoods = ', arrayFavoriteFoods);
-  const [flagShowPageSearch, setFlagShowPageSearch] = useState(false);
-
-  // Получаем данные при первом рендере, и затем при каждом изменении flagRandomFood ???????????????
+  // Get arrayRandomFood
+  // Получаем данные при первом рендере, и затем при каждом изменении flagRandomFood !!!!!!!!!!!!!!!
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(urlRandom);
         const objectData = await response.json();
         const { meals: arrayData } = objectData;
-        //
         setArrayRandomFood(arrayData);
-        setFlagAddToFavorites(false); // ?????????????????????????????????????????????????
       } catch {
         console.error('Error !!!'); //
       }
@@ -105,15 +103,13 @@ const EpicGastronomicApplication = () => {
     getData();
   }, [flagRandomFood]);
 
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Get arrayAllFoods:
   useEffect(() => {
     const getData = async () => {
       try {
         const responce = await fetch(url);
-
         const objectData = await responce.json();
         const { meals: arrayData } = objectData;
-        console.log('Array data = ', arrayData);
         setArrayAllFoods(arrayData);
       } catch {
         console.error('Error !!!');
@@ -138,7 +134,7 @@ const EpicGastronomicApplication = () => {
               <PageSearchFoods
                 arrayFavoriteFoods={arrayFavoriteFoods}
                 setArrayFavoriteFoods={setArrayFavoriteFoods}
-                arrayRandomFood={arrayRandomFood} // !!!!!!!!!!!
+                arrayRandomFood={arrayRandomFood}
                 setArrayRandomFood={setArrayRandomFood}
                 arrayAllFoods={arrayAllFoods}
                 setArrayAllFoods={setArrayAllFoods}
@@ -166,10 +162,6 @@ const EpicGastronomicApplication = () => {
                 setArrayIngredientsAndMeasureRandomFood={
                   setArrayIngredientsAndMeasureRandomFood
                 }
-                flagShowPageSearch={flagShowPageSearch}
-                setFlagShowPageSearch={setFlagShowPageSearch}
-                //
-                // flagChoiceArrayRandomFavorite={flagChoiceArrayRandomFavorite}
               />
             }
           />
@@ -177,6 +169,8 @@ const EpicGastronomicApplication = () => {
             path='random'
             element={
               <PageRandomFood
+                arrayAllFoods={arrayAllFoods}
+                setArrayAllFoods={setArrayAllFoods}
                 arrayRandomFood={arrayRandomFood}
                 setArrayRandomFood={setArrayRandomFood}
                 arrayIngredientsAndMeasureRandomFood={
@@ -203,8 +197,8 @@ const EpicGastronomicApplication = () => {
                 flagChoiceButton={flagChoiceButton}
                 setFlagChoiceButton={setFlagChoiceButton}
                 //
-                flagShowPageSearch={flagShowPageSearch}
-                setFlagShowPageSearch={setFlagShowPageSearch}
+                flagShowIconAddToFavorites={flagShowIconAddToFavorites}
+                setFlagShowIconAddToFavorites={setFlagShowIconAddToFavorites}
               />
             }
           />
@@ -239,9 +233,7 @@ const EpicGastronomicApplication = () => {
                 setArrayIngredientsAndMeasureRandomFood={
                   setArrayIngredientsAndMeasureRandomFood
                 }
-                //
-                flagShowPageSearch={flagShowPageSearch}
-                setFlagShowPageSearch={setFlagShowPageSearch}
+                setArrayAllFoods={setArrayAllFoods}
               />
             }
           />
@@ -252,7 +244,4 @@ const EpicGastronomicApplication = () => {
     </div>
   );
 };
-
 export default EpicGastronomicApplication;
-
-// почему не отрабатывает useEffect в PageSearchFoods ?  (consoleLog выше с 444 работает) !

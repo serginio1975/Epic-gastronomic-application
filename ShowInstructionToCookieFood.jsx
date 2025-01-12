@@ -11,8 +11,6 @@ const ShowInstructionToCookieFood = ({
   setFlagChoiceButton,
 }) => {
   console.log('instructions to coockie !!!');
-  // console.log(arrayRandomFood);
-  // console.log(setFlagShowRandomFood);
 
   return (
     <main>

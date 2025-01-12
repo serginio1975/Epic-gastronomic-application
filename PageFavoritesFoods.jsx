@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import CardRandomFoodApplication from './CardRandomFoodApplication';
 import CardFoodTwoSides from './CardFoodTwoSides';
 import ShowIngredientsAndMeasureFood from './ShowIngredientsAndMeasureFood';
 import GetInstructionsRandomFood from './ShowInstructionToCookieFood';
-//
-// import showIngredientsAndMeasere from './showIngredientsAndMeasere';
 import ButtonReturnShowFood from './ButtonReturnShowFood';
 import ButtonShowInstructionsFood from './ButtonShowInstructionsFood';
-
 import './CSS/PageFavoritesPage.css';
 
 const PageFavoritesFoods = ({
@@ -30,47 +26,53 @@ const PageFavoritesFoods = ({
   flagChoiceButton,
   setFlagChoiceButton,
   //
-
-  //
   arrayIngredientsAndMeasureRandomFood,
-  //
-  flagShowPageSearch,
+  // flagShowPageSearch,
   setFlagShowPageSearch,
+  //
+  setArrayAllFoods,
 }) => {
-  useEffect(() => {
-    console.log(44444);
-    setFlagShowPageSearch(false);
-    // setFlagChoiceArrayRandomFavorite(true);
-  }, []);
-
+  //
+  // render pageFavoritesFoods !!! render pageFavoritesFoods !!! render pageFavoritesFoods !!!
   return flagShowRandomFood && !flagShowInstructionRandomFood ? (
     <main>
       <div className='container'>
         <div className='wrapper-favorites-cards'>
-          {/* Render CardFoodTwoSides !!!  Render CardFoodTwoSides !!!  Render CardFoodTwoSides !!!*/}
-          <CardFoodTwoSides
-            arrayAllFoods={arrayAllFoods}
-            arrayRandomFood={arrayRandomFood}
-            setArrayRandomFood={setArrayRandomFood}
-            arrayFavoriteFoods={arrayFavoriteFoods}
-            // addToFavorites={addToFavorites}
-            flagAddToFavorites={flagAddToFavorites}
-            setFlagChoiceButton={setFlagChoiceButton}
-            setFlagShowInstructionRandomFood={setFlagShowInstructionRandomFood}
-            setFlagAddToFavorites={setFlagAddToFavorites}
-            flagChoiceArrayRandomFavorite={flagChoiceArrayRandomFavorite}
-            setflagChoiceArrayRandomFavorite={setflagChoiceArrayRandomFavorite}
-            setArrayFavoriteFoods={setArrayFavoriteFoods}
-            style={{ opacity: 0.5 }}
-            //
-            setArrayIngredientsAndMeasureRandomFood={
-              setArrayIngredientsAndMeasureRandomFood
-            }
-            setFlagShowRandomFood={setFlagShowRandomFood}
-            //
-            flagShowPageSearch={flagShowPageSearch}
-            setFlagShowPageSearch={setFlagShowPageSearch}
-          />
+
+          {arrayFavoriteFoods.map((object) => (
+            <div key={object.idMeal} className='wrapper-favorite-card-global'>
+              <CardFoodTwoSides
+                object={object}
+                arrayAllFoods={arrayAllFoods}
+                arrayRandomFood={arrayRandomFood}
+                setArrayRandomFood={setArrayRandomFood}
+                arrayFavoriteFoods={arrayFavoriteFoods}
+                // addToFavorites={addToFavorites}
+                flagAddToFavorites={flagAddToFavorites}
+                setFlagChoiceButton={setFlagChoiceButton}
+                setFlagShowInstructionRandomFood={
+                  setFlagShowInstructionRandomFood
+                }
+                setFlagAddToFavorites={setFlagAddToFavorites}
+                flagChoiceArrayRandomFavorite={flagChoiceArrayRandomFavorite}
+                setflagChoiceArrayRandomFavorite={
+                  setflagChoiceArrayRandomFavorite
+                }
+                setArrayFavoriteFoods={setArrayFavoriteFoods}
+                style={{ opacity: 0.5 }}
+                //
+                setArrayIngredientsAndMeasureRandomFood={
+                  setArrayIngredientsAndMeasureRandomFood
+                }
+                setFlagShowRandomFood={setFlagShowRandomFood}
+                //
+                // flagShowPageSearch={flagShowPageSearch}
+                setFlagShowPageSearch={setFlagShowPageSearch}
+                //
+                setArrayAllFoods={setArrayAllFoods}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </main>
@@ -96,54 +98,4 @@ const PageFavoritesFoods = ({
     />
   );
 };
-
 export default PageFavoritesFoods;
-
-//
-// const showIngredientsAndMeasere = (object) => {
-//   console.log(object);
-
-//   console.log(arrayRandomFood);
-//   // console.log(arrayIngredientsAndMeasureRandomFood);
-
-//   // Проверяем, что обьект загрузился:
-//   if (arrayRandomFood) {
-//     console.log('if');
-
-//     // Создаём массив ингредиентов:
-//     let ingredientsFood;
-//     let measureIngredient;
-//     const arrayIngredientsAndMeasure = [];
-//     console.log(arrayIngredientsAndMeasure);
-
-//     for (let i = 1; i < 20; i++) {
-//       // Проверяем, что ингредиент в данной позиции существует:
-
-//       if (object[`strIngredient${i}`]) {
-//         ingredientsFood = object[`strIngredient${i}`];
-//       }
-//       // Проверяем, что единица измерения в данной позиции существует:
-//       if (object[`strMeasure${i}`] && object[`strMeasure${i}`] !== ' ') {
-//         measureIngredient = object[`strMeasure${i}`];
-//       } else {
-//         ingredientsFood = '';
-//         measureIngredient = '';
-//       }
-//       // Проверка
-//       if (ingredientsFood && measureIngredient) {
-//         console.log('ifif');
-
-//         arrayIngredientsAndMeasure.push({
-//           ingredientsFood, // Ожидал получить только значение, а не свойство: ingredientsFood: ???
-//           measureIngredient,
-//         });
-//       }
-//     }
-//     // Обновляем состояние arrayIngredientsAndMeasureRandomFood и состояние flagShowRandomFood (для отображения в браузере ингридиентов рандомного блюда и их необходимого колличества):
-//     // console.log(arrayIngredientsAndMeasure);
-//     setArrayIngredientsAndMeasureRandomFood(arrayIngredientsAndMeasure);
-//     setFlagShowRandomFood(false);
-//   }
-
-//   setArrayRandomFood([object]);
-// };

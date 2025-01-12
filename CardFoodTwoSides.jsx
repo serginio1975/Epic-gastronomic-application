@@ -7,73 +7,44 @@ const CardFoodTwoSides = ({
   arrayRandomFood,
   setArrayRandomFood,
   arrayAllFoods,
+  setArrayAllFoods,
   setArrayIngredientsAndMeasureRandomFood,
   setFlagShowRandomFood,
   //
   arrayFavoriteFoods,
   setArrayFavoriteFoods,
-  flagAddToFavorites,
   setFlagShowInstructionRandomFood,
   setFlagChoiceButton,
   //
-  flagShowPageSearch,
   setFlagAddToFavorites,
+  object,
 }) => {
-  console.log(setFlagAddToFavorites, flagShowPageSearch);
-
+  //
   return (
     <>
-      {!flagShowPageSearch
-        ? arrayFavoriteFoods.map((object, index) => (
-            <div key={index} className='wrapper-favorite-card-global'>
-              <div className='wrapper-card-inner'>
-                <CardFrontSide object={object} />
-                <CardBackSide
-                  object={object}
-                  arrayRandomFood={arrayRandomFood}
-                  setArrayRandomFood={setArrayRandomFood}
-                  setArrayIngredientsAndMeasureRandomFood={
-                    setArrayIngredientsAndMeasureRandomFood
-                  }
-                  flagAddToFavorites={flagAddToFavorites}
-                  setFlagShowInstructionRandomFood={
-                    setFlagShowInstructionRandomFood
-                  }
-                  setFlagChoiceButton={setFlagChoiceButton}
-                  arrayFavoriteFoods={arrayFavoriteFoods}
-                  setArrayFavoriteFoods={setArrayFavoriteFoods}
-                  setFlagShowRandomFood={setFlagShowRandomFood}
-                  setFlagAddToFavorites={setFlagAddToFavorites}
-                />
-              </div>
-            </div>
-          ))
-        : arrayAllFoods.map((object, index) => (
-            <div key={index} className='wrapper-favorite-card-global'>
-              <div className='wrapper-card-inner'>
-                <CardFrontSide object={object} />
-                <CardBackSide
-                  object={object}
-                  arrayRandomFood={arrayRandomFood}
-                  setArrayRandomFood={setArrayRandomFood}
-                  setArrayIngredientsAndMeasureRandomFood={
-                    setArrayIngredientsAndMeasureRandomFood
-                  }
-                  flagAddToFavorites={flagAddToFavorites}
-                  setFlagShowInstructionRandomFood={
-                    setFlagShowInstructionRandomFood
-                  }
-                  setFlagChoiceButton={setFlagChoiceButton}
-                  arrayFavoriteFoods={arrayFavoriteFoods}
-                  setArrayFavoriteFoods={setArrayFavoriteFoods}
-                  setFlagShowRandomFood={setFlagShowRandomFood}
-                  setFlagAddToFavorites={setFlagAddToFavorites}
-                />
-              </div>
-            </div>
-          ))}
+      <div className='wrapper-card-inner'>
+        <CardFrontSide object={object} />
+        <CardBackSide
+          object={object}
+          arrayRandomFood={arrayRandomFood}
+          setArrayRandomFood={setArrayRandomFood}
+          setArrayIngredientsAndMeasureRandomFood={
+            setArrayIngredientsAndMeasureRandomFood
+          }
+          setFlagShowInstructionRandomFood={setFlagShowInstructionRandomFood}
+          setFlagChoiceButton={setFlagChoiceButton}
+          arrayFavoriteFoods={arrayFavoriteFoods}
+          setArrayFavoriteFoods={setArrayFavoriteFoods}
+          setFlagShowRandomFood={setFlagShowRandomFood}
+          setFlagAddToFavorites={setFlagAddToFavorites}
+          //
+          arrayAllFoods={arrayAllFoods}
+          setArrayAllFoods={setArrayAllFoods}
+          //
+        />
+      </div>
     </>
   );
 };
-
 export default CardFoodTwoSides;
+// !!!!!!!

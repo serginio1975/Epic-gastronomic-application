@@ -1,8 +1,6 @@
 import React from 'react';
 
 const CardFrontSide = ({ object }) => {
-  // console.log(object);
-
   return (
     <>
       <div className='wrapper-card-front'>
@@ -32,5 +30,4 @@ const CardFrontSide = ({ object }) => {
     </>
   );
 };
-
 export default CardFrontSide;

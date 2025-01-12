@@ -10,8 +10,6 @@ const ButtonReturnShowFood = ({
       onClick={() => {
         setFlagShowRandomFood(true);
         setFlagShowInstructionRandomFood(false);
-
-        console.log('Button', setFlagShowRandomFood);
       }}
       className='button-return-random-food'
     >
